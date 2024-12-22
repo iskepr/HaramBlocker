@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+</html>
+<html>
+
+<head>
+  <title>إستغفر الله</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="popup.js"></script>
+  <style>
+    @font-face {
+      font-family: 'foda';
+      src: url('assets/Foda.ttf');
+    }
+
+    @font-face {
+      font-family: 'Amiri';
+      src: url('assets/Amiri-Bold.ttf');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      border-radius: 3px;
+      padding: 5px;
+      background-color: #00000063;
+    }
+
+    body {
+      text-align: center;
+      color: white;
+      font-family: foda;
+      background-color: #111;
+      background: radial-gradient(circle, #222 0%, #111 100%);
+      overflow: hidden;
+      font-size: 100%;
+    }
+
+    .bubble {
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      background-color: #fff;
+      animation: float 6s infinite;
+    }
+
+    .tr {
+      top: -150px;
+      right: -150px;
+      opacity: 0.5;
+      animation-delay: 1s;
+      border-radius: 67% 33% 28% 72% / 59% 52% 48% 41%;
+    }
+
+    .bl {
+      bottom: -170px;
+      left: -170px;
+      opacity: .7;
+      animation-delay: .5s;
+      border-radius: 67% 33% 28% 72% / 59% 52% 48% 41%;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.09;
+    }
+
+    .top {
+      margin-top: 150px;
+    }
+
+    .ayat {
+      font-family: Amiri;
+      margin: 120px 10%;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bubble tr"></div>
+  <div class="bubble bl"></div>
+  <img class="stars" src="assets/2iiB.gif" alt="">
+  <div class="content">
+    <div class="top">
+      <h1>اتقي الله يا اخي إن الله يراك</h1>
+    </div>
+    <!-- ayat -->
+    <div class="ayat">
+      <h2 id="aya"></h2>
+    </div>
+  </div>
+  <footer>
+    <p>code by:
+      <code><a href="https://github.com/iskepr">Skepr</a></code>
+    </p>
+  </footer>
+
+</body>
+
+</html>

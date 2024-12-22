@@ -1,0 +1,55 @@
+{
+  "manifest_version": 3,
+  "name": "HaramBlocker",
+  "version": "0.1.0",
+  "description": "فلتر يقوم بحظر المحتوى الحرام وتحليل الصوت لعزل الموسيقى الخلفية.",
+  "author": "skeprcontact@gmail.com",
+  "host_permissions": ["*://*/*"],
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "declarativeNetRequestWithHostAccess",
+    "<all_urls>",
+    "nativeMessaging",
+    "tabs",
+    "management",
+    "idle",
+    "storage",
+    "notifications",
+    "alarms",
+    "contextMenus",
+    "*://*/*",
+    "scripting"
+  ],
+  "background": {
+    "scripts": [
+      "content.js"
+    ]
+  },
+  "icons": {
+    "48": "assets/icon.svg",
+    "128": "assets/icon.svg"
+  },
+  "action": {
+    "default_title": "HaramBlocker",
+    "default_popup": "popup.html",
+    "default_icon": "assets/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "skeprcontact@gmail.com"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*", "block.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
