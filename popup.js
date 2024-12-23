@@ -1,3 +1,4 @@
+// معالجة قيمة النطاق (range)
 let range = document.getElementById("range");
 range.addEventListener("change", (e) => {
   setValue(e.target.value);
@@ -18,8 +19,27 @@ async function init() {
 
 init().catch((e) => console.error(e));
 
+// -------------------------------------------------------------- مانع الاباحية والتواصل الاجتماعي
+let socialbut = document.getElementById("social");
 
-// quran
+// حفظ الحالة عند التغيير
+socialbut.addEventListener("change", () => {
+  const socialEnabled = socialbut.checked;
+  setsocial(socialEnabled);
+});
+async function setsocial(socialEnabled) {
+  await browser.storage.local.set({ socialEnabled });
+}
+async function initializesocial() {
+  let { socialEnabled } = await browser.storage.local.get("socialEnabled");
+
+  if (typeof socialEnabled === "undefined") {
+    socialEnabled = false;
+  }
+  socialbut.checked = socialEnabled;
+}
+initializesocial();
+
 // قائمة الآيات القرآنية
 const verses = [
   {
@@ -50,10 +70,15 @@ function getRandomVerse() {
   const ayaElement = document.getElementById("aya");
 
   if (ayaElement) {
-    ayaElement.innerHTML = `${verses[randomIndex].aya} <br> ${verses[randomIndex].sura}`;
+    // تنظيف القيم قبل إدخالها في DOM
+    const sanitizedAya = DOMPurify.sanitize(verses[randomIndex].aya);
+    const sanitizedSura = DOMPurify.sanitize(verses[randomIndex].sura);
+
+    ayaElement.innerHTML = `${sanitizedAya} <br> ${sanitizedSura}`;
   } else {
     console.error("عنصر الآية أو السورة غير موجود!");
   }
 }
 
+// عرض الآية عند التحميل
 getRandomVerse();

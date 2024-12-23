@@ -48,7 +48,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["assets/*", "block.html"],
+      "resources": ["assets/*", "block.html", "socialBlock.html"],
       "matches": ["<all_urls>"]
     }
   ]

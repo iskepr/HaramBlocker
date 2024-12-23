@@ -17,7 +17,6 @@ instagram.com
 kickstarter.com
 kiwibox.com
 line.me
-linkedin.com
 mastodon.social
 myspace.com
 orkut.com
@@ -31,7 +30,6 @@ skyrock.com
 snapchat.com
 tagged.com
 taringa.net
-telegram.org
 the-dots.com
 tieba.baidu.com
 tumblr.com
@@ -40,3 +38,4 @@ viber.com
 vk.com
 weibo.com
 yy.com
+x.com
