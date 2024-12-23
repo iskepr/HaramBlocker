@@ -19,6 +19,9 @@ body {
   overflow: hidden;
   background: radial-gradient(circle, #222 0%, #111 100%);
 }
+::-webkit-scrollbar{
+  width: 0px;
+}
 .row {
   display: flex;
   flex-direction: row;
@@ -38,6 +41,8 @@ body {
 .content {
   z-index: 1;
   width: 400px;
+  height: 500px;
+  overflow-y: scroll;
   display: flex;
   text-align: right;
   align-items: center;
@@ -46,9 +51,8 @@ body {
 
 .box {
   width: 90%;
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 10px;
-  overflow: hidden;
   border-radius: 20px;
   background: #ffffff10;
   backdrop-filter: blur(10px);
@@ -87,10 +91,10 @@ body {
 .box .header .playbut {
   --primary: #000;
   --secondary: #ffffff;
-  --time: 0.6s;
+  --time: 0.4s;
   appearance: none;
   cursor: pointer;
-  width: 80px;
+  width: 70px;
   aspect-ratio: 2 / 1;
   background: radial-gradient(circle, #222 0%, #111 100%);
   border-radius: 30px;
@@ -146,9 +150,7 @@ input[type="range"] {
 }
 
 /* footer */
-footer {
-  height: 70px;
-}
+
 footer svg {
   display: flex;
   align-items: center;

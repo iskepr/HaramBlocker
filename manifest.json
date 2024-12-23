@@ -22,9 +22,7 @@
     "scripting"
   ],
   "background": {
-    "scripts": [
-      "content.js"
-    ]
+    "scripts": ["content.js"]
   },
   "icons": {
     "48": "assets/icon.svg",
@@ -48,7 +46,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["assets/*", "block.html", "socialBlock.html"],
+      "resources": ["assets/*", "pages/*"],
       "matches": ["<all_urls>"]
     }
   ]

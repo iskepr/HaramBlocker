@@ -18,8 +18,27 @@ async function init() {
 }
 
 init().catch((e) => console.error(e));
+// -------------------------------------------------------- مانع الكلمات السيئة
+let badwords = document.getElementById("badwords");
 
-// -------------------------------------------------------------- مانع الاباحية والتواصل الاجتماعي
+// حفظ الحالة عند التغيير
+badwords.addEventListener("change", () => {
+  const badwordsEnabled = badwords.checked;
+  setbadwords(badwordsEnabled);
+});
+async function setbadwords(badwordsEnabled) {
+  await browser.storage.local.set({ badwordsEnabled });
+}
+async function initializebadwords() {
+  let { badwordsEnabled } = await browser.storage.local.get("badwordsEnabled");
+
+  if (typeof badwordsEnabled === "undefined") {
+    badwordsEnabled = false;
+  }
+  badwords.checked = badwordsEnabled;
+}
+initializebadwords();
+// -------------------------------------------------------- مانع الاباحية والتواصل الاجتماعي
 let socialbut = document.getElementById("social");
 
 // حفظ الحالة عند التغيير
@@ -68,6 +87,7 @@ const verses = [
 function getRandomVerse() {
   const randomIndex = Math.floor(Math.random() * verses.length);
   const ayaElement = document.getElementById("aya");
+  ayaElement.innerHTML = "adasddas";
 
   if (ayaElement) {
     // تنظيف القيم قبل إدخالها في DOM
